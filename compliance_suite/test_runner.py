@@ -228,6 +228,8 @@ class TestRunner():
 
                 filtered_value: Any = ""   # Retrieve the API data value through DotMap parser
                 dot_dict = DotMap(json_data)
+                print(dot_dict)
+                print('Filter-{index})
                 if dot_dict is not None:
                     filtered_value = eval("dot_dict." + job_filter["path"].split('.', maxsplit=1)[1])
 
