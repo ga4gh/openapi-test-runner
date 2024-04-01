@@ -79,7 +79,7 @@ jobs:
     storage_vars:
       id2: $response.id
     response:
-      200:
+      200: {}
   - name: get_task
     description: Retrieve the task details for TES task
     endpoint: /tasks/{id}
@@ -96,4 +96,4 @@ jobs:
         type: array
         size: 2
     response:
-      200:
+      200: {}
