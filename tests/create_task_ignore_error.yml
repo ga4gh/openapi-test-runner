@@ -42,6 +42,9 @@ jobs:
       id: "{id1}"
     query_parameters:
       - view: FULL
+    polling:
+      interval: 10
+      timeout: 3600
     filter:
       - path: $response.logs[0].logs
         type: array
@@ -76,7 +79,7 @@ jobs:
     storage_vars:
       id2: $response.id
     response:
-      200: {}
+      200:
   - name: get_task
     description: Retrieve the task details for TES task
     endpoint: /tasks/{id}
@@ -85,9 +88,12 @@ jobs:
       id: "{id2}"
     query_parameters:
       - view: FULL
+    polling:
+      interval: 10
+      timeout: 3600
     filter:
       - path: $response.logs[0].logs
         type: array
         size: 2
     response:
-      200: {}
+      200:
