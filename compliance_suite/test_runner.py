@@ -228,9 +228,10 @@ class TestRunner():
 
                 filtered_value: Any = ""   # Retrieve the API data value through DotMap parser
                 dot_dict = DotMap(json_data)
-                print(dot_dict)
-                print('Filter-{index})
+    
                 if dot_dict is not None:
+                    print(dot_dict)
+                    print('Filter-{index})
                     filtered_value = eval("dot_dict." + job_filter["path"].split('.', maxsplit=1)[1])
 
                 # Check if provided filter type matches with the filtered value class
@@ -264,9 +265,6 @@ class TestRunner():
 
                 # Check size if specified
                 if "size" in job_filter:
-                    print(job_filter["size"])
-                    print(len(filtered_value))
-                    print(report_case_result)
                     report_case_result = report_case_result and len(filtered_value) == job_filter["size"]
 
                 # Update report case status
