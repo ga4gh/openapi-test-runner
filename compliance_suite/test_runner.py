@@ -228,15 +228,8 @@ class TestRunner():
 
                 filtered_value: Any = ""   # Retrieve the API data value through DotMap parser
                 dot_dict = DotMap(json_data)
-    
                 if dot_dict is not None:
                     filtered_value = eval("dot_dict." + job_filter["path"].split('.', maxsplit=1)[1])
-
-                if filtered_value is not None:
-                    ReportUtility.case_fail(case=report_case_filter,
-                            message=f'Filter-{index} failed for {self.job_data["operation"]} '
-                                    f'{self.job_data["endpoint"]} due to no data',
-                            log_message="")
 
                 # Check if provided filter type matches with the filtered value class
                 if not ((job_filter["type"] == "string" and isinstance(filtered_value, str)) or
