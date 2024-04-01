@@ -262,6 +262,9 @@ class TestRunner():
 
                 # Check size if specified
                 if "size" in job_filter:
+                    print(job_filter["size"])
+                    print(len(filtered_value))
+                    print(report_case_result)
                     report_case_result = report_case_result and len(filtered_value) == job_filter["size"]
 
                 # Update report case status
