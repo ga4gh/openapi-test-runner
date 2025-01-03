@@ -9,6 +9,7 @@ WORKDIR /app
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update
 RUN apt -y install git jq
+RUN pip install --upgrade setuptools pip
 
 RUN git clone https://github.com/elixir-cloud-aai/openapi-test-runner.git
 
